@@ -1,0 +1,30 @@
+{
+  "name": "@creativedc/lambda",
+  "version": "1.0.0",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/swagger": "^2.5.1",
+    "@nestjs/platform-express": "^6.0.0",
+    "reflect-metadata": "^0.1.13",
+    "aws-serverless-express": "^3.3.5",
+    "class-transformer": "^0.2.0",
+    "aws-lambda": "^0.1.2",
+    "class-validator": "^0.9.1",
+    "rxjs": "^6.2.2"
+  },
+  "devDependencies": {
+    "typescript": "~3.4.5"
+  }
+}
