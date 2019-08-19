@@ -1,0 +1,5 @@
+{
+  "watch": ["packages"],
+  "ext": "ts",
+  "exec": "lerna run local --stream"
+}

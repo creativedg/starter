@@ -1,8 +1,8 @@
-import { AppModule } from './app.module';
+import { LocalModule } from './local.module';
 import { ServiceBuilder } from '@creativedc/lambda';
 
 const serviceBuilder: ServiceBuilder = new ServiceBuilder({
-  module: AppModule,
+  module: LocalModule,
   documentBuilder: {
     title: '',
     description: '',
@@ -13,3 +13,8 @@ const serviceBuilder: ServiceBuilder = new ServiceBuilder({
   enableCors: true,
 });
 export const handler = serviceBuilder.handler;
+export const bootstrap = async () => {
+  const app: any = await serviceBuilder.bootstrapServer();
+  await app.listen(4000);
+  console.log("Server listen http://localhost:4000");
+};

@@ -3,6 +3,6 @@
 ## Setup
 
 ```shell
-npm install
+npm installsdfsdf
 npm run bootstrap
 ```

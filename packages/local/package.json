@@ -1,6 +1,6 @@
 {
-  "name": "@creativedc/hello",
-  "version": "1.0.0",
+  "name": "@creativedc/local",
+  "version": "0.0.1",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -10,6 +10,7 @@
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
+    "local": "ts-node -r tsconfig-paths/register src/main.ts",
     "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
@@ -23,6 +24,7 @@
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
     "@nestjs/platform-express": "^6.0.0",
+    "nest-router": "^1.0.9",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
     "rxjs": "^6.5.2"
