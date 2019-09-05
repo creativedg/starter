@@ -1,0 +1,28 @@
+service: hello
+frameworkVersion: ">=1.0.0 <2.0.0"
+plugins:
+  - serverless-plugin-typescript
+  - serverless-domain-manager
+custom:
+  customDomain:
+    domainName: testedouglas.com
+    stage: producao
+    basePath: ${self:custom.name}
+    createRoute53Record: true
+    endpointType: 'regional'
+  name: cities
+provider:
+  name: aws
+  runtime: nodejs8.10
+functions:
+  http:
+    handler: src/app.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
